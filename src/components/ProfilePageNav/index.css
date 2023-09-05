@@ -1,0 +1,19 @@
+.profile_nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 5px;
+}
+
+input {
+  border: none;
+  background: antiquewhite;
+  color: rgb(121, 133, 32);
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 1s;
+}
+input:hover {
+  background: rgb(121, 133, 32);
+  color: antiquewhite;
+}

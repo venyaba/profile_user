@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
+import { Context } from "./сontext";
+import { ProfilPage } from "./pages/ProfilePage/ProfilPage";
 
 function App() {
+  const [userInfo, setUserInfo] = useState([]);
+  const [isProfilPage, setIsProfilPage] = useState(false);
+  const [isSearchProduct, setIsSearchProduct] = useState(false);
+
+  useEffect(() => {
+    console.log("userINfo in useeffect", userInfo[0]);
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  }, [userInfo]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ setUserInfo, userInfo, setIsProfilPage }}>
+      <div className="App">
+        {isProfilPage ? <ProfilPage user={userInfo[0]} /> : <LoginPage />}{" "}
+      </div>
+    </Context.Provider>
   );
 }
 
