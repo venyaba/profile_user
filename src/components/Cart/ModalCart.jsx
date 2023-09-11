@@ -1,0 +1,25 @@
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
+
+
+const  ModalCart = ({ setIsModalOpen,showModal}) =>{
+
+  const handleClose = () => setIsModalOpen(!showModal);
+
+  return (
+    <>
+      <Modal show={showModal} onHide={handleClose} bg="bg-danger" className="text-danger ">
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>Бета раздел находиться в разработке</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
+
+export default ModalCart;

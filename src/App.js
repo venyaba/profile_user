@@ -10,7 +10,7 @@ function App() {
   const [isSearchProduct, setIsSearchProduct] = useState(false);
 
   useEffect(() => {
-    console.log("userINfo in useeffect", userInfo[0]);
+
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
   }, [userInfo]);
   return (

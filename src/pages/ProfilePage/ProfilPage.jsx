@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ProfilePageNav } from "../../components/ProfilePageNav";
 import { ProfileInfo } from "../../components/ProfilInfo";
 import { SearchBar } from "../../components/SearchBar";
-import { Cart } from "../../components/Cart";
+import ModalCart from "../../components/Cart/ModalCart";
 import "./index.css";
 
 export const ProfilPage = ({ user }) => {
@@ -18,7 +18,8 @@ export const ProfilPage = ({ user }) => {
     if (isSearchBar) {
       return <SearchBar />;
     }
-    if (isCart) return <Cart />;
+    if (isCart)
+      return <ModalCart showModal={isCart} setIsModalOpen={setIsCart} />;
     else {
       return null;
     }
@@ -37,9 +38,7 @@ export const ProfilPage = ({ user }) => {
           />
         }
       </div>
-      <div className="profile_container">
-        {renderSections()}
-      </div>
+      <div className="profile_container">{renderSections()}</div>
     </div>
   );
 };

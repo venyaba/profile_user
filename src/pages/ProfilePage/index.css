@@ -1,8 +1,6 @@
-.profile_container{
-    margin: 20px;
-    background-color: blanchedalmond;
-    /* border: 1px solid gray; */
-    box-shadow: 0px 0px 3px 0px #000000;
-    height: 100vh;
-
+.profile_container {
+  background-color: blanchedalmond;
+  box-shadow: 0px 0px 3px 0px #000000;
+  padding: 20px;
+  min-height: 100vh ;
 }

@@ -49,6 +49,7 @@ export function ProfilePageNav({ setIsProfile, setIsCart, setIsSearchBar }) {
           value="Корзина и оформление"
           id="cart"
         />
+        <span>beta</span>
       </li>
     </ul>
   );
