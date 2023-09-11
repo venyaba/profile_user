@@ -32,7 +32,10 @@ export const ProfilPage = ({ user }) => {
         {
           <ProfilePageNav
             render={renderSections}
+            isProfile={isProfile}
+            isSearchBar={isSearchBar}
             setIsCart={setIsCart}
+            isCart={isCart}
             setIsProfile={setIsProfile}
             setIsSearchBar={setIsSearchBar}
           />
