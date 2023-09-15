@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { ProfilePageNav } from "../../components/ProfilePageNav";
 import { ProfileInfo } from "../../components/ProfilInfo";
 import { SearchBar } from "../../components/SearchBar";
-import ModalCart from "../../components/Cart/ModalCart";
+import ModalCart from "../../components/Cart/Modal";
+import { Cart } from "../../components/Cart";
 import "./index.css";
 
 export const ProfilPage = ({ user }) => {
@@ -19,7 +20,7 @@ export const ProfilPage = ({ user }) => {
       return <SearchBar />;
     }
     if (isCart)
-      return <ModalCart showModal={isCart} setIsModalOpen={setIsCart} />;
+      return <Cart />;
     else {
       return null;
     }

@@ -1,6 +1,10 @@
 import "./index.css";
+import { Context } from "../../сontext";
+import { useContext } from "react";
 export function ProfilePageNav({setIsProfile, isProfile,isCart,isSearchBar, setIsCart, setIsSearchBar }) {
-    
+
+  const {cart} = useContext(Context);
+
   const handleClick = (e) => {
 
     switch (e.target.id) {
@@ -63,7 +67,7 @@ export function ProfilePageNav({setIsProfile, isProfile,isCart,isSearchBar, setI
             color:isCart?"antiquewhite": "rgb(121, 133, 32)"
         }}
         />
-        <span>beta</span>
+        {cart.length > 0?(<span>{cart.length}</span>):null}
       </li>
     </ul>
   );

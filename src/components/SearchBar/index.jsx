@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Product } from "../Product";
 import './index.css'
+import { Context } from "../../сontext";
 
 export const SearchBar = () => {
+
+const {cart,addToCart,removeFromCart} = useContext(Context)
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [cart, setCart] = useState([]);
+ 
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
   };
 
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
-
-  const removeFromCart = (productId) => {
-    const updatedCart = cart.filter((product) => product.id !== productId);
-    setCart(updatedCart);
-  };
+ 
 
   useEffect(() => {
     if (query.length >= 2 ) {
@@ -36,7 +32,7 @@ export const SearchBar = () => {
     }
   }, [query]);
 
-  console.log(results);
+  console.log(cart);
 
   return (
     <div className="searchBar">

@@ -23,12 +23,13 @@ input:hover {
   background-color: red;
   color: aliceblue;
   font-weight: 700;
-  padding: 2px 5px;
+  padding: 5px 7px;
   position: absolute;
   left: 71%;
   top: 9%;
-  transform: rotate(39deg);
+  /* transform: rotate(39deg); */
   font-size: 10px;
+  border-radius: 50%;
 
 }
 
